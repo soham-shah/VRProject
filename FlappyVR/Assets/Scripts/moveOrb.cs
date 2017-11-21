@@ -10,19 +10,20 @@ public class moveOrb : MonoBehaviour {
 	public KeyCode flapper;
 
 	public float horizVel = 0;
-	public float flapSpeed = 100f;
 	public int laneNum = 2;
 	public bool controllLocked = false;
 
 	private bool didFlap = false;
-	// Use this for initialization
+
+	public Vector3 down;
+	public Vector3 flap;
+//	public Vector3 gravity;
 	void Start () {
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Rigidbody> ().velocity = new Vector3 (horizVel, 0, 4); 
 		if (Input.GetKeyDown(moveL) && laneNum>1 && !controllLocked){
 			horizVel = -2;
 			StartCoroutine (stopSlide ());
@@ -43,13 +44,15 @@ public class moveOrb : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if(didFlap) {
-//			rigidbody2D.AddForce( Vector2.up * flapSpeed );
-//			animator.SetTrigger("DoFlap");
-//
 
+		if (didFlap) {
+//			GetComponent<Rigidbody> ().velocity = new Vector3 (horizVel, 4, 4); 
+			GetComponent<Rigidbody> ().velocity = flap; 
 			didFlap = false;
+		} else {
+			GetComponent<Rigidbody> ().velocity = down; 
 		}
+
 
 	}
 

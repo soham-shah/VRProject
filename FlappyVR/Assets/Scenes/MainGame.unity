@@ -983,6 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0f5e126c852459791303d2afb240bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 4
 --- !u!54 &415948278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2573,7 +2574,7 @@ GameObject:
   - component: {fileID: 2077993733}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2593,9 +2594,10 @@ MonoBehaviour:
   moveR: 100
   flapper: 32
   horizVel: 0
-  flapSpeed: 100
   laneNum: 2
   controllLocked: 0
+  down: {x: 0, y: -4, z: 4}
+  flap: {x: 0, y: 8, z: 4}
 --- !u!54 &2077993734
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2671,7 +2673,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2077993732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalPosition: {x: 0, y: 4.21, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 0}
