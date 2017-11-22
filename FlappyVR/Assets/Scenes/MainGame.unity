@@ -1497,7 +1497,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157312663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.02, z: 6}
+  m_LocalPosition: {x: 1.04, y: 1.02, z: 6}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2568,8 +2568,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2077993738}
   - component: {fileID: 2077993737}
-  - component: {fileID: 2077993736}
   - component: {fileID: 2077993735}
+  - component: {fileID: 2077993736}
   - component: {fileID: 2077993734}
   - component: {fileID: 2077993733}
   m_Layer: 0
@@ -2596,8 +2596,9 @@ MonoBehaviour:
   horizVel: 0
   laneNum: 2
   controllLocked: 0
-  down: {x: 0, y: -4, z: 4}
-  flap: {x: 0, y: 8, z: 4}
+  forwardSpeed: 4
+  upSpeed: 500
+  gravityScale: 0.25
 --- !u!54 &2077993734
 Rigidbody:
   m_ObjectHideFlags: 0

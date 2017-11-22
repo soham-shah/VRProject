@@ -13,16 +13,20 @@ public class moveOrb : MonoBehaviour {
 	public int laneNum = 2;
 	public bool controllLocked = false;
 
+
+
+	public int forwardSpeed;
+	public int upSpeed;
+	public float gravityScale;
+	public static float globalGravity = -9.81f;
+
+	private Rigidbody rb;
 	private bool didFlap = false;
 
-	public Vector3 down;
-	public Vector3 flap;
-//	public Vector3 gravity;
 	void Start () {
-
+		rb = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (Input.GetKeyDown(moveL) && laneNum>1 && !controllLocked){
 			horizVel = -2;
@@ -44,16 +48,18 @@ public class moveOrb : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+		//move forward fixed amount and add scalable gravity component
+		Vector3 gravity = globalGravity * gravityScale * Vector3.up;
+		rb.AddForce(gravity, ForceMode.Acceleration);
+		rb.AddForce (Vector3.forward * forwardSpeed);
 
+		//handle the up and down
 		if (didFlap) {
-//			GetComponent<Rigidbody> ().velocity = new Vector3 (horizVel, 4, 4); 
-			GetComponent<Rigidbody> ().velocity = flap; 
+			rb.AddForce (Vector3.up * upSpeed);
 			didFlap = false;
 		} else {
-			GetComponent<Rigidbody> ().velocity = down; 
+
 		}
-
-
 	}
 
 	void OnCollisionEnter(Collision other){
