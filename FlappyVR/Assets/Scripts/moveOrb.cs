@@ -13,8 +13,6 @@ public class moveOrb : MonoBehaviour {
 	public int laneNum = 2;
 	public bool controllLocked = false;
 
-
-
 	public int forwardSpeed;
 	public int upSpeed;
 	public float gravityScale;
@@ -49,6 +47,7 @@ public class moveOrb : MonoBehaviour {
 
 	void FixedUpdate(){
 		//move forward fixed amount and add scalable gravity component
+		rb.velocity = new Vector3 (horizVel, rb.velocity.y , rb.velocity.z); 
 		Vector3 gravity = globalGravity * gravityScale * Vector3.up;
 		rb.AddForce(gravity, ForceMode.Acceleration);
 		rb.AddForce (Vector3.forward * forwardSpeed);
@@ -60,6 +59,7 @@ public class moveOrb : MonoBehaviour {
 		} else {
 
 		}
+
 	}
 
 	void OnCollisionEnter(Collision other){
