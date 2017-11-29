@@ -69,6 +69,14 @@ public class moveOrb : MonoBehaviour {
 		}
 	}
 
+	void onTriggerEnter(Collider other) {
+		Debug.Log ("caught the triger");
+		if (other.gameObject.tag == "lethal") {
+			SceneManager.LoadScene ("GameOver");
+			Destroy (gameObject);
+		}
+	}
+
 	IEnumerator stopSlide(){
 		yield return new WaitForSeconds (.5f);
 		horizVel = 0;
