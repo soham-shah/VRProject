@@ -11,14 +11,14 @@ public class planeOfDeath : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "destroyable")
+		if (other.gameObject.tag == "destroyable"  || other.gameObject.tag == "lethal")
 		{
 			Destroy (other.gameObject);
 		}
 	}
 
 	void OnCollisionEnter(Collision other){
-		if (other.gameObject.tag == "destroyable") {
+		if (other.gameObject.tag == "destroyable" || other.gameObject.tag == "lethal") {
 			Destroy (other.gameObject);
 		}
 	}

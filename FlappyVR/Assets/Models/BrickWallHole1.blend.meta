@@ -397,6 +397,84 @@ ModelImporter:
     4300150: Cube_086
     4300152: Cube_082
     4300154: Cube_080
+    6400000: Cube_000
+    6400002: Cube_001
+    6400004: Cube_002
+    6400006: Cube_003
+    6400008: Cube_004
+    6400010: Cube_005
+    6400012: Cube_006
+    6400014: Cube_007
+    6400016: Cube_008
+    6400018: Cube_009
+    6400020: Cube_011
+    6400022: Cube_013
+    6400024: Cube_014
+    6400026: Cube_015
+    6400028: Cube_016
+    6400030: Cube_017
+    6400032: Cube_018
+    6400034: Cube_019
+    6400036: Cube_020
+    6400038: Cube_021
+    6400040: Cube_022
+    6400042: Cube_023
+    6400044: Cube_024
+    6400046: Cube_025
+    6400048: Cube_026
+    6400050: Cube_030
+    6400052: Cube_031
+    6400054: Cube_032
+    6400056: Cube_033
+    6400058: Cube_034
+    6400060: Cube_035
+    6400062: Cube_036
+    6400064: Cube_037
+    6400066: Cube_038
+    6400068: Cube_039
+    6400070: Cube_040
+    6400072: Cube_041
+    6400074: Cube_042
+    6400076: Cube_043
+    6400078: Cube_044
+    6400080: Cube_045
+    6400082: Cube_046
+    6400084: Cube_047
+    6400086: Cube_048
+    6400088: Cube_049
+    6400090: Cube_050
+    6400092: Cube_051
+    6400094: Cube_052
+    6400096: Cube_053
+    6400098: Cube_054
+    6400100: Cube_055
+    6400102: Cube_056
+    6400104: Cube_057
+    6400106: Cube_058
+    6400108: Cube_059
+    6400110: Cube_060
+    6400112: Cube_061
+    6400114: Cube_062
+    6400116: Cube_063
+    6400118: Cube_080
+    6400120: Cube_082
+    6400122: Cube_086
+    6400124: Cube_090
+    6400126: Cube_091
+    6400128: Cube_092
+    6400130: Cube_093
+    6400132: Cube_094
+    6400134: Cube_095
+    6400136: Cube_096
+    6400138: Cube_097
+    6400140: Cube_098
+    6400142: Cube_099
+    6400144: Cube_100
+    6400146: Cube_101
+    6400148: Cube_102
+    6400150: Cube_103
+    6400152: Cube_105
+    6400154: Cube_110
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -436,7 +514,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
