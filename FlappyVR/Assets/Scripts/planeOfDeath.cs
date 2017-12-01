@@ -13,14 +13,13 @@ public class planeOfDeath : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "destroyable") {
+		if (other.gameObject.tag == "ground") {
 			Destroy (other.gameObject);
+			gm.GetComponent<GameMaster>().genNewGround();
 		}
 		if (other.gameObject.tag == "lethal") {
-			Debug.Log ("here");
-
 			Destroy (other.gameObject);
-			gm.GetComponent<GameMaster>().genNewObst();
+//			gm.GetComponent<GameMaster>().genNewObst();
 		}
 	}
 }
