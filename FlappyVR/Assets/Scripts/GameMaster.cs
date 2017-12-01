@@ -15,12 +15,15 @@ public class GameMaster : MonoBehaviour {
 		while (zscenePos < 40) {
 			//Instantiate (MarioPipe, new Vector3 (-1, 0, zscenePos), MarioPipe.rotation);
 			///Instantiate (Wall, new Vector3 (-1, 0, zscenePos), Wall.rotation);
-
-			int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
-			Instantiate (Obstacles [randomIndex], new Vector3 (-1, 0, zscenePos), Quaternion.identity); //Instantiates our random obstacle
-
-			zscenePos += 10;
+			genNewObst ();
 		}
+	}
+
+	public void genNewObst(){
+		int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
+		Instantiate (Obstacles [randomIndex], new Vector3 (-1, 0, zscenePos), Quaternion.identity); //Instantiates our random obstacle
+
+		zscenePos += 10;
 	}
 
 	// Update is called once per frame
