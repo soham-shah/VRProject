@@ -10,8 +10,6 @@ public class GameMaster : MonoBehaviour {
 
 	public GameObject[] Obstacles; //Array for Obstacles
 
-
-
 	// Use this for initialization
 	void Start () {
 		while (zscenePos < 40) {
