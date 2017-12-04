@@ -50,7 +50,7 @@ public class moveOrb : MonoBehaviour {
 		rb.velocity = new Vector3 (horizVel, rb.velocity.y , rb.velocity.z); 
 		Vector3 gravity = globalGravity * gravityScale * Vector3.up;
 		rb.AddForce(gravity, ForceMode.Acceleration);
-		rb.AddForce (Vector3.forward * forwardSpeed);
+		rb.AddForce (Vector3.forward * 1);
 
 		//handle the up and down
 		if (didFlap) {
