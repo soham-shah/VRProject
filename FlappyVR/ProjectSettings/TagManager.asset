@@ -9,6 +9,7 @@ TagManager:
   - destroyable
   - GameMaster
   - ground
+  - Regen
   layers:
   - Default
   - TransparentFX

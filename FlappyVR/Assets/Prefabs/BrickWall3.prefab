@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 64871045835750194}
   m_Layer: 0
   m_Name: Cube_000
-  m_TagString: lethal
+  m_TagString: Regen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 95457060534745872}
   m_Layer: 0
   m_Name: BrickWall3
-  m_TagString: Untagged
+  m_TagString: Regen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

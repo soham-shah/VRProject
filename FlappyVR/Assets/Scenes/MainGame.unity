@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4ec680b22c346679ef4f0f0621b264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zObstPos: 4
+  zObstPos: 10
   zGroundPos: 5
   Obstacles:
   - {fileID: 1723268527936194, guid: a00e0a7ae63f34ed98b928903e202c80, type: 2}
@@ -428,6 +428,7 @@ MonoBehaviour:
   - {fileID: 1675619161576920, guid: 15558cd7aef14488c9ce99f914c74cf7, type: 2}
   - {fileID: 1240888813615664, guid: 27ffc5515731c485e96138d4f02db617, type: 2}
   ground: {fileID: 1118459524636040, guid: 51609ab5fd3764934a0a0583ffb4bdb7, type: 2}
+  clone: {fileID: 0}
 --- !u!4 &933343958
 Transform:
   m_ObjectHideFlags: 0
