@@ -12,6 +12,8 @@ public class GameMaster : MonoBehaviour {
 	public GameObject[] Obstacles; //Array for Obstacles
 	public GameObject ground;
 	public GameObject clone;
+	public GameObject side1;
+	public GameObject side2;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +34,8 @@ public class GameMaster : MonoBehaviour {
 
 	public void genNewGround(){
 		Instantiate (ground, new Vector3 (0, 0, zGroundPos), Quaternion.identity);
+		Instantiate (side1, new Vector3 (-9.5F, 3, zGroundPos), Quaternion.identity);
+		Instantiate (side2, new Vector3 (9.5F, 3, zGroundPos), Quaternion.identity);
 		zGroundPos += 5;
 	}
 
