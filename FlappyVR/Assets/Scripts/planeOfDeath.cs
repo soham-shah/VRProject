@@ -14,8 +14,8 @@ public class planeOfDeath : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "ground") {
-			Destroy (other.gameObject);
-			gm.GetComponent<GameMaster>().genNewGround();
+//			Destroy (other.gameObject);
+//			gm.GetComponent<GameMaster>().genNewGround();
 			//gm.GetComponent<GameMaster>().genNewObst();
 		}
 		if (other.gameObject.tag == "Regen") {
