@@ -20,9 +20,9 @@ public class GameMaster : MonoBehaviour {
 		while (zObstPos < 40) {
 			genNewObst ();
 		}
-		for (int i = 0; i < 5; i++) {
-			genNewGround ();
-		}
+//		for (int i = 0; i < 5; i++) {
+//			genNewGround ();
+//		}
 	}
 
 	public void genNewObst(){
