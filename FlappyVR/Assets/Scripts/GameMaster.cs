@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
 
@@ -15,8 +16,14 @@ public class GameMaster : MonoBehaviour {
 	public GameObject side1;
 	public GameObject side2;
 
+	public Text scoreText;
+	private int score;
+
 	// Use this for initialization
 	void Start () {
+		score = 0;
+		SetScoreText ();
+
 		while (zObstPos < 40) {
 			genNewObst ();
 		}
@@ -41,33 +48,14 @@ public class GameMaster : MonoBehaviour {
 
 	public void destroyWall(){
 		Destroy (clone);
+		score++;
+		SetScoreText ();
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	void SetScoreText ()
+	{
+		scoreText.text = "Score: " + score.ToString ();
+	}
 
 
 	// Update is called once per frame
