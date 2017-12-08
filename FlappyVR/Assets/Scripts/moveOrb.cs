@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class moveOrb : MonoBehaviour
-{
-
+public class moveOrb : MonoBehaviour{
     public KeyCode moveL;
     public KeyCode moveR;
     public KeyCode moveU;
@@ -13,82 +11,69 @@ public class moveOrb : MonoBehaviour
 
     public float horizVel = 0;
     public float vertVel = 0;
-    public bool controllLocked = false;
-
     public int forwardSpeed;
-    private Rigidbody rb;
+    
+	private Rigidbody rb;
+	private bool controllLockVert = false;
+	private bool controllLockHoriz = false;
 
-    void Start()
-    {
+    void Start(){
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.LeftArrow) && !controllLocked)
-        {
+    void Update(){
+        if (Input.GetKey(KeyCode.LeftArrow) && !controllLockHoriz){
             horizVel = -2;
             StartCoroutine(stopHorizontalSlide());
-            controllLocked = true;
+            controllLockHoriz = true;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && !controllLocked)
-        {
+        if (Input.GetKey(KeyCode.RightArrow) && !controllLockHoriz){
             horizVel = 2;
             StartCoroutine(stopHorizontalSlide());
-            controllLocked = true;
+            controllLockHoriz = true;
         }
-        if (Input.GetKey(KeyCode.UpArrow) && !controllLocked)
-        {
+        if (Input.GetKey(KeyCode.UpArrow) && !controllLockVert){
             vertVel = 2;
             StartCoroutine(stopVertSlide());
-            controllLocked = true;
+			controllLockVert = true;
         }
-        if (Input.GetKey(KeyCode.DownArrow) && !controllLocked)
-        {
+		if (Input.GetKey(KeyCode.DownArrow) && !controllLockVert){
             vertVel = -2;
             StartCoroutine(stopVertSlide());
-            controllLocked = true;
+			controllLockVert = true;
         }
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
 		rb.velocity = new Vector3(horizVel, vertVel, rb.velocity.z);
         rb.AddForce(Vector3.forward * 1);
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "lethal" || other.gameObject.tag == "Regen")
-        {
+    void OnCollisionEnter(Collision other){
+        if (other.gameObject.tag == "lethal" || other.gameObject.tag == "Regen"){
             SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
     }
 
-    void onTriggerEnter(Collider other)
-    {
+    void onTriggerEnter(Collider other){
         Debug.Log("caught the triger");
-        if (other.gameObject.tag == "lethal" || other.gameObject.tag == "Regen")
-        {
+        if (other.gameObject.tag == "lethal" || other.gameObject.tag == "Regen"){
             SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
     }
 
-    IEnumerator stopHorizontalSlide()
-    {
+    IEnumerator stopHorizontalSlide(){
         yield return new WaitForSeconds(.5f);
         horizVel = 0;
-        controllLocked = false;
+        controllLockHoriz = false;
     }
 
-    IEnumerator stopVertSlide()
-    {
+    IEnumerator stopVertSlide(){
         yield return new WaitForSeconds(.5f);
         vertVel = 0;
-        controllLocked = false;
+        controllLockVert = false;
     }
-
 }
