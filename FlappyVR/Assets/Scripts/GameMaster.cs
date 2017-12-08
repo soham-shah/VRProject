@@ -24,7 +24,7 @@ public class GameMaster : MonoBehaviour {
 		score = 0;
 		SetScoreText ();
 
-		while (zObstPos < 40) {
+		while (zObstPos < 50) {
 			genNewObst ();
 		}
 //		for (int i = 0; i < 5; i++) {
@@ -34,9 +34,8 @@ public class GameMaster : MonoBehaviour {
 
 	public void genNewObst(){
 		int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
-		clone = Instantiate (Obstacles [randomIndex], new Vector3 (0, 1, zObstPos), Quaternion.identity); //Instantiates our random obstacle
-
-		zObstPos += 30;
+		clone = Instantiate (Obstacles [randomIndex], new Vector3 (9.3f, 0.5f, zObstPos), Quaternion.identity); //Instantiates our random obstacle
+		zObstPos += 25;
 	}
 
 	public void genNewGround(){

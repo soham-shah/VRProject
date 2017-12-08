@@ -18,8 +18,7 @@ public class planeOfDeath : MonoBehaviour {
 //			gm.GetComponent<GameMaster>().genNewGround();
 			//gm.GetComponent<GameMaster>().genNewObst();
 		}
-		if (other.gameObject.tag == "Regen") {
-			//Destroy (other.gameObject);
+		if (other.gameObject.tag == "lethal") {
 			gm.GetComponent<GameMaster>().destroyWall();
 			gm.GetComponent<GameMaster>().genNewObst();
 		}

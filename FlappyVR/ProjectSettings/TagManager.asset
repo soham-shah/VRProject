@@ -9,6 +9,7 @@ TagManager:
   - destroyable
   - GameMaster
   - ground
+  - Score
   - Regen
   layers:
   - Default

@@ -51,7 +51,7 @@ public class moveOrb : MonoBehaviour{
     }
 
     void OnCollisionEnter(Collision other){
-        if (other.gameObject.tag == "lethal" || other.gameObject.tag == "Regen"){
+        if (other.gameObject.tag == "lethal"){
             SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
@@ -59,7 +59,7 @@ public class moveOrb : MonoBehaviour{
 
     void onTriggerEnter(Collider other){
         Debug.Log("caught the triger");
-        if (other.gameObject.tag == "lethal" || other.gameObject.tag == "Regen"){
+        if (other.gameObject.tag == "lethal"){
             SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
