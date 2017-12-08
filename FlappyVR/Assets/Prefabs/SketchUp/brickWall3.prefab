@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4237057898280102}
   - component: {fileID: 64391119713324008}
   m_Layer: 0
-  m_Name: brickWall3 1
+  m_Name: brickWall3
   m_TagString: lethal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

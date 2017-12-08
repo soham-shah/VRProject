@@ -35,7 +35,7 @@ public class GameMaster : MonoBehaviour {
 	public void genNewObst(){
 		int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
 		clone = Instantiate (Obstacles [randomIndex], new Vector3 (9.3f, 0.5f, zObstPos), Quaternion.identity); //Instantiates our random obstacle
-		zObstPos += 25;
+		zObstPos += 40;
 	}
 
 	public void genNewGround(){

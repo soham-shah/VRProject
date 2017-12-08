@@ -23,23 +23,23 @@ public class moveOrb : MonoBehaviour{
 
     void Update(){
         if (Input.GetKey(KeyCode.LeftArrow) && !controllLockHoriz){
-            horizVel = -2;
+            horizVel = -3;
             StartCoroutine(stopHorizontalSlide());
             controllLockHoriz = true;
         }
 
         if (Input.GetKey(KeyCode.RightArrow) && !controllLockHoriz){
-            horizVel = 2;
+            horizVel = 3;
             StartCoroutine(stopHorizontalSlide());
             controllLockHoriz = true;
         }
         if (Input.GetKey(KeyCode.UpArrow) && !controllLockVert){
-            vertVel = 2;
+            vertVel = 3;
             StartCoroutine(stopVertSlide());
 			controllLockVert = true;
         }
 		if (Input.GetKey(KeyCode.DownArrow) && !controllLockVert){
-            vertVel = -2;
+            vertVel = -3;
             StartCoroutine(stopVertSlide());
 			controllLockVert = true;
         }
