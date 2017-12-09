@@ -8,11 +8,10 @@ public class GameMaster : MonoBehaviour {
 	//public Transform obst1;
 	//public Transform MarioPipe;
 	public float zObstPos;
-	public float zGroundPos = 5;
+	public float zGroundPos = 6;
 
 	public GameObject[] Obstacles; //Array for Obstacles
 	public GameObject ground;
-	public GameObject clone;
 	public GameObject side1;
 	public GameObject side2;
 
@@ -24,18 +23,15 @@ public class GameMaster : MonoBehaviour {
 		score = 0;
 		SetScoreText ();
 
-		while (zObstPos < 50) {
+		for (int i =0; i<5; i++) {
 			genNewObst ();
 		}
-//		for (int i = 0; i < 5; i++) {
-//			genNewGround ();
-//		}
 	}
 
 	public void genNewObst(){
 		int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
-		clone = Instantiate (Obstacles [randomIndex], new Vector3 (9.3f, 0.5f, zObstPos), Quaternion.identity); //Instantiates our random obstacle
-		zObstPos += 40;
+		Instantiate (Obstacles [randomIndex], new Vector3 (9.3f, 0.5f, zObstPos), Quaternion.identity); //Instantiates our random obstacle
+		zObstPos += 20;
 	}
 
 	public void genNewGround(){
@@ -45,21 +41,14 @@ public class GameMaster : MonoBehaviour {
 		zGroundPos += 5;
 	}
 
-	public void destroyWall(){
-		Destroy (clone);
+	public void destroyWall(GameObject obst){
+		Destroy (obst);
 		score++;
 		SetScoreText ();
 	}
 
-	void SetScoreText ()
-	{
+	void SetScoreText (){
 		scoreText.text = "Score: " + score.ToString ();
-	}
-
-
-	// Update is called once per frame
-	void Update () {
-
 	}
 }
 

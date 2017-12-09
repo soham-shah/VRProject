@@ -18,7 +18,6 @@ public class moveWithPlayer : MonoBehaviour {
 		offset = transform.position.z - player_pos.position.z;
 	}
 
-	// Update is called once per frame
 	void Update () {
 		if (player_pos != null) {
 			transform.position = new Vector3 (transform.position.x, transform.position.y, player_pos.position.z + offset);

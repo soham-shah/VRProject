@@ -11,7 +11,7 @@ public class moveOrb : MonoBehaviour{
 
     public float horizVel = 0;
     public float vertVel = 0;
-    public int forwardSpeed;
+    public float forwardSpeed;
     
 	private Rigidbody rb;
 	private bool controllLockVert = false;
@@ -46,8 +46,10 @@ public class moveOrb : MonoBehaviour{
     }
 
     void FixedUpdate(){
-		rb.velocity = new Vector3(horizVel, vertVel, rb.velocity.z);
-        rb.AddForce(Vector3.forward * 1);
+		rb.velocity = new Vector3(horizVel, vertVel, forwardSpeed);
+
+		// Use this if you want constant acceleration
+		//        rb.AddForce(Vector3.forward * 1);
     }
 
     void OnCollisionEnter(Collision other){
