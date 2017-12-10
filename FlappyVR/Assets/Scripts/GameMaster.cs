@@ -18,6 +18,9 @@ public class GameMaster : MonoBehaviour {
 	public Text scoreText;
 	private int score;
 
+	//store the previously generated random obstacle so we don't have the same obstacle twice in a row. 
+	private int prevRand = 0;
+
 	// Use this for initialization
 	void Start () {
 		score = 0;
@@ -30,8 +33,12 @@ public class GameMaster : MonoBehaviour {
 
 	public void genNewObst(){
 		int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
+		while (randomIndex == prevRand) {
+			randomIndex = Random.Range(0, Obstacles.Length); 
+		}
 		Instantiate (Obstacles [randomIndex], new Vector3 (9.3f, 0.5f, zObstPos), Quaternion.identity); //Instantiates our random obstacle
 		zObstPos += 20;
+		prevRand = randomIndex;
 	}
 
 	public void genNewGround(){
