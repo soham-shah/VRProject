@@ -5,13 +5,24 @@ using UnityEngine;
 public class paramCube : MonoBehaviour {
 	public int _band;
 	public float _startScale, _scaleMultiplier;
-	// Use this for initialization
+	public bool _useBuffer;
+
+	Material _material;
+
 	void Start () {
-		
+		_material = GetComponent<MeshRenderer> ().materials [0];
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.localScale = new Vector3 (transform.localScale.x, (audioPeer._freqBand [_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+		if (_useBuffer) {
+			transform.localScale = new Vector3 (transform.localScale.x, (audioPeer._audioBandBuffer [_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+			Color _color = new Color (audioPeer._audioBandBuffer [_band], audioPeer._audioBandBuffer [_band], audioPeer._audioBandBuffer [_band]);
+			_material.SetColor ("_EmissionColor", _color);
+		} else {
+			transform.localScale = new Vector3 (transform.localScale.x, (audioPeer._audioBand [_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+			Color _color = new Color (audioPeer._audioBandBuffer [_band], audioPeer._audioBandBuffer [_band], audioPeer._audioBandBuffer [_band]);
+			_material.SetColor ("_EmissionColor", _color);
+		}
 	}
 }
