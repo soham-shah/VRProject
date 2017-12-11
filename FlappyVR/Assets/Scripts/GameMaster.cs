@@ -11,6 +11,7 @@ public class GameMaster : MonoBehaviour {
 	public float zGroundPos = 6;
 
 	public GameObject[] Obstacles; //Array for Obstacles
+	public GameObject musicCube;
 	public GameObject ground;
 	public GameObject side1;
 	public GameObject side2;
@@ -32,6 +33,7 @@ public class GameMaster : MonoBehaviour {
 	}
 
 	public void genNewObst(){
+		genMusicCubes ();
 		int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
 		while (randomIndex == prevRand) {
 			randomIndex = Random.Range(0, Obstacles.Length); 
@@ -39,6 +41,24 @@ public class GameMaster : MonoBehaviour {
 		Instantiate (Obstacles [randomIndex], new Vector3 (9.3f, 0.5f, zObstPos), Quaternion.identity); //Instantiates our random obstacle
 		zObstPos += 20;
 		prevRand = randomIndex;
+	}
+
+	public void genMusicCubes(){
+		for (int i = 0; i < 8; i++){
+			GameObject obj;
+			obj = Instantiate (musicCube, new Vector3 (9.3f, 0.5f, (float)(zObstPos + (2.5*i))), Quaternion.identity);
+			obj.AddComponent(typeof(paramCube));
+			paramCube pc = obj.GetComponent<paramCube>();
+			pc._band = i;
+			pc._startScale = 1;
+			pc._scaleMultiplier = 40;
+			obj = Instantiate (musicCube, new Vector3 (-9.3f, 0.5f, (float)(zObstPos + (2.5*i))), Quaternion.identity);
+			obj.AddComponent(typeof(paramCube));
+			pc = obj.GetComponent<paramCube>();
+			pc._band = i;
+			pc._startScale = 1;
+			pc._scaleMultiplier = 40;
+		}
 	}
 
 	public void genNewGround(){

@@ -258,38 +258,6 @@ MonoBehaviour:
   _startScale: 1
   _scaleMultiplier: 20
   _useBuffer: 1
---- !u!114 &809252485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 809252479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8980af0d98c2f4cac8c91aed8ce843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  analyzer: {fileID: 0}
-  material: {fileID: 0}
-  basicsColor:
-    r: 0.5
-    g: 0.5
-    b: 0.5
-    a: 1
-  color:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  newColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  isEmissive: 0
-  useRed: 1
-  useGreen: 0
-  useBlue: 0
 --- !u!1001 &860901756
 Prefab:
   m_ObjectHideFlags: 0
@@ -373,7 +341,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4311310954976076, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311310954976076, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 2}
@@ -867,7 +839,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072974824
 GameObject:
@@ -932,5 +904,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}

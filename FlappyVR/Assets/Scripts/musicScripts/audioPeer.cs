@@ -6,7 +6,7 @@ using UnityEngine;
 public class audioPeer : MonoBehaviour {
 
 	AudioSource _audiosource;
-	float[] _samples = new float[512];
+	public static float[] _samples = new float[512];
 	float[] _freqBand = new float[8]; 
 	float[] _bandBuffer = new float[8];
 	float[] _bufferDecrease = new float[8];
