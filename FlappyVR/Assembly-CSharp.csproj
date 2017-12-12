@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\moveOrb.cs" />
      <Compile Include="Assets\Scripts\moveWithPlayer.cs" />
      <Compile Include="Assets\Scripts\musicScripts\audioPeer.cs" />
+     <Compile Include="Assets\Scripts\musicScripts\ChangeLight.cs" />
      <Compile Include="Assets\Scripts\musicScripts\instantiate512cubes.cs" />
      <Compile Include="Assets\Scripts\musicScripts\paramCube.cs" />
      <Compile Include="Assets\Scripts\planeOfDeath.cs" />
