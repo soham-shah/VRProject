@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\musicScripts\instantiate512cubes.cs" />
      <Compile Include="Assets\Scripts\musicScripts\paramCube.cs" />
      <Compile Include="Assets\Scripts\planeOfDeath.cs" />
+     <None Include="Assets\Shaders\Skybox.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
