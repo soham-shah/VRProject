@@ -897,11 +897,10 @@ MonoBehaviour:
   - {fileID: 1612439568723964, guid: a98ed3f4c3c4244f2ba2edf50c7ad496, type: 2}
   - {fileID: 1594447328367930, guid: ff1cfecd28039470f984e2606e70875e, type: 2}
   musicCube: {fileID: 1043983598063236, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 2}
-  ground: {fileID: 1118459524636040, guid: 51609ab5fd3764934a0a0583ffb4bdb7, type: 2}
-  side1: {fileID: 0}
-  side2: {fileID: 0}
   randMats:
-  - {fileID: 2100000, guid: ef476f736cefc41b2a59e0b8734fdf6c, type: 2}
+  - {fileID: 2100000, guid: 2c6c2ee0a1135438dbf8b2eddd87a120, type: 2}
+  - {fileID: 2100000, guid: c4e25facafcab4ae799f6d6aad383679, type: 2}
+  - {fileID: 2100000, guid: 21867278c939540ad98fc524a601f283, type: 2}
   scoreText: {fileID: 1746344053}
 --- !u!4 &933343958
 Transform:
@@ -967,6 +966,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 23188251291802018, guid: 51609ab5fd3764934a0a0583ffb4bdb7,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8905c17f4875a40d1b3f48e52bd40d45, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51609ab5fd3764934a0a0583ffb4bdb7, type: 2}
   m_IsPrefabParent: 0

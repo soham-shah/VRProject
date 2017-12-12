@@ -15,7 +15,8 @@ public class GameMaster : MonoBehaviour {
 	private int score;
 
 	//store the previously generated random obstacle so we don't have the same obstacle twice in a row. 
-	private int prevRand = 0;
+	private int prevRandObst = 0;
+	private int prevRandMat = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -29,17 +30,24 @@ public class GameMaster : MonoBehaviour {
 
 	public void genNewObst(){
 		genMusicCubes ();
+
+		//Generate the obstacles
 		int randomIndex = Random.Range(0, Obstacles.Length); //Randomly selects an object in our Array
-		while (randomIndex == prevRand) {
+		while (randomIndex == prevRandObst) {
 			randomIndex = Random.Range(0, Obstacles.Length); 
 		}
+		prevRandObst = randomIndex;
 		GameObject obj = Instantiate (Obstacles [randomIndex], new Vector3 (9.3f, 0.5f, zObstPos), Quaternion.identity); //Instantiates our random obstacle
 		Transform temp = obj.GetComponent<Transform>();
-
-		int randomMat = Random.Range(0, randMats.Length);
-		SetShader (temp.GetChild(0).gameObject, randMats[randomMat]);
 		zObstPos += 20;
-		prevRand = randomIndex;
+
+		//Add random material to the obstacle
+		int randomMat = Random.Range(0, randMats.Length);
+		while (randomMat == prevRandMat) {
+			randomMat = Random.Range(0, randMats.Length); 
+		}
+		SetShader (temp.GetChild(0).gameObject, randMats[randomMat]);
+		prevRandMat = randomMat;
 	}
 
 	void SetShader (GameObject obj, Material mat){
