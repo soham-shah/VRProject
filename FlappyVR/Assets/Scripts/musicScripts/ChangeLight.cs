@@ -9,24 +9,33 @@ public class ChangeLight : MonoBehaviour {
 	public float b;
 
 	private static Light myLight;
+	private Color current;
+	private Color x;
 
 	// Use this for initialization
 	void Start () {
 		myLight = GetComponent<Light>();
-//		myLight.color = Color.green;
-		InvokeRepeating("setColor", .05f, 5f);
+		myLight.color = Color.green;
+		current = Color.green;
+		InvokeRepeating("changeColor", .05f, 5f);
+
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
+		setColor();
 	}
 
-	void setColor (){
+	void changeColor(){
 		r = interpolate(audioPeer._audioBandBuffer [0]);
 		g = interpolate(audioPeer._audioBandBuffer [1]);
 		b = interpolate(audioPeer._audioBandBuffer [2]);
-		Color x =  new Color (audioPeer._audioBandBuffer [0],audioPeer._audioBandBuffer [1],audioPeer._audioBandBuffer [2],1f);
-		myLight.color = Color.Lerp (myLight.color, x, 4f);
+		x =  new Color (audioPeer._audioBandBuffer [0],audioPeer._audioBandBuffer [1],audioPeer._audioBandBuffer [2],1f);
+		current = x;
+	}
+
+	void setColor (){
+		myLight.color = Color.Lerp (myLight.color, x, Time.deltaTime*.5f);
 	}
 
 	float interpolate(float OldValue){
