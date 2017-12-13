@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour {
 	public float zObstPos;
 	public float zGroundPos = 6;
+	public static GameMaster GM;
 
 	public GameObject[] Obstacles; //Array for Obstacles
 	public GameObject musicCube;
 	public Material[] randMats; //Array for Materials
 
 	public Text scoreText;
-	private int score;
+	public int score;
+	public static int lastScore;
 
 	//store the previously generated random obstacle so we don't have the same obstacle twice in a row. 
 	private int prevRandObst = 0;
@@ -26,6 +28,10 @@ public class GameMaster : MonoBehaviour {
 		for (int i =0; i<5; i++) {
 			genNewObst ();
 		}
+	}
+
+	public int getScore() {
+		return score;
 	}
 
 	public void genNewObst(){
@@ -101,6 +107,7 @@ public class GameMaster : MonoBehaviour {
 	public void destroyWall(GameObject obst){
 		Destroy (obst);
 		score++;
+		PlayerPrefs.SetInt ("Score", score);
 		SetScoreText ();
 	}
 
